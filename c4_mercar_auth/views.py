@@ -2,6 +2,10 @@ from rest_framework import status, views
 from rest_framework.response import Response
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
+from rest_framework import generics
+from c4_mercar_auth import models
+from c4_mercar_auth import serializers
+
 from c4_mercar_auth import models, serializers
 
 class UserProfileCreateView(views.APIView):
@@ -22,3 +26,7 @@ class UserProfileCreateView(views.APIView):
             tokenSerializer.validated_data,
             status = status.HTTP_201_CREATED
         )
+
+class UserProfileDetailView(generics.RetrieveAPIView):
+    queryset         = models.UserProfile.objects.all()
+    serializer_class = serializers.UserProfileSerializer

@@ -19,4 +19,5 @@ from c4_mercar_auth import views
 
 urlpatterns = [
     path("user/", views.UserProfileCreateView.as_view()),
+    path("user/<int:pk>", views.UserProfileDetailView.as_view()),
 ]
