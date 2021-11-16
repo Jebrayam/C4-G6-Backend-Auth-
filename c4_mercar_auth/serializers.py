@@ -6,4 +6,12 @@ from c4_mercar_auth import models
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.UserProfile
-        fields = ["id", "email", "name", "last_name", "password"]
+        fields = [
+            "id",
+            "email",
+            "first_name",
+            "last_name",
+            "phone_number",
+            "address",
+            "password"
+        ]

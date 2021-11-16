@@ -6,27 +6,29 @@ from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
 
 class UserProfileManager(BaseUserManager):
-    def create_user(self, email, first_name, last_name, phone_number, password = None):
+    def create_user(self, email, first_name, last_name, phone_number, address,  password = None):
         if not email:
             raise ValueError("Users must have an email")
 
         email = self.normalize_email(email)
         user = self.model(
             email = email,
-            first_name = first,
+            first_name = first_name,
             last_name = last_name,
             phone_number = phone_number,
+            address = address
         )
 
         user.set_password(password)
         user.save(using = self._db)
 
-    def create_user(self, email, first_name, last_name, phone_number, password):
+    def create_user(self, email, first_name, last_name, phone_number, address,  password):
         user = self.create_user(
             email,
             first_name,
             last_name,
             phone_number,
+            address,
             password
         )
         user.is_superuser = True
@@ -40,13 +42,13 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         unique = True,
     )
 
-    fist_name = models.CharField(
+    first_name = models.CharField(
         "Fist Name",
         max_length = 256,
         blank = True
     )
 
-    last_Name = models.CharField(
+    last_name = models.CharField(
         "Last Name",
         max_length = 256,
         blank = True
