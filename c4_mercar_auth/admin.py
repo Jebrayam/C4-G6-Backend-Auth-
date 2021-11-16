@@ -1,3 +1,4 @@
 from django.contrib import admin
+from c4_mercar_auth import models
 
-# Register your models here.
+admin.site.register(models.UserProfile)
