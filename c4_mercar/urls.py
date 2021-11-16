@@ -13,11 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# Django
 from django.urls import path
-
+# Local
 from c4_mercar_auth import views
 
 urlpatterns = [
     path("user/", views.UserProfileCreateView.as_view()),
     path("user/<int:pk>", views.UserProfileDetailView.as_view()),
+    path("verifyToken/",  views.VerifyTokenView.as_view())
 ]
