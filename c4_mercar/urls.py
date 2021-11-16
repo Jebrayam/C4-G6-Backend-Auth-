@@ -15,10 +15,14 @@ Including another URLconf
 """
 # Django
 from django.urls import path
+# Django REST
+from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView)
 # Local
 from c4_mercar_auth import views
 
 urlpatterns = [
+    path("login/",        TokenObtainPairView.as_view()),
+    path("refresh/",      TokenRefreshView.as_view()),
     path("user/", views.UserProfileCreateView.as_view()),
     path("user/<int:pk>", views.UserProfileDetailView.as_view()),
     path("verifyToken/",  views.VerifyTokenView.as_view())
