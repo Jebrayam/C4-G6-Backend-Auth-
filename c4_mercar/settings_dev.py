@@ -81,6 +81,8 @@ REST_FRAMEWORK = {
     )
 }
 
+AUTH_USER_MODEL = 'c4_mercar_auth.UserProfile'
+
 ROOT_URLCONF = 'c4_mercar.urls'
 
 TEMPLATES = [
