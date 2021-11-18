@@ -15,3 +15,13 @@ class UserProfileSerializer(serializers.ModelSerializer):
             "address",
             "password"
         ]
+    def to_representation(self, instance):
+        UserProfileData = models.UserProfile.objects.get(id = instance.id)
+        return {
+            "id"          : UserProfileData.id,
+            "email"       : UserProfileData.email,
+            "first_name"  : UserProfileData.first_name,
+            "last_name"   : UserProfileData.last_name,
+            "address"     : UserProfileData.address,
+            "phone_number": UserProfileData.phone_number
+        }
