@@ -110,10 +110,10 @@ WSGI_APPLICATION = 'c4_mercar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd497mtqr3r0suq',
-        'USER': 'xugfpqdenyztiq',
-        'PASSWORD': 'c0894ebc0562c9a8a27fd9da6ff9a4f35f3de46c0d30788a7ded2140d954bbdc',
-        'HOST': 'ec2-35-169-204-98.compute-1.amazonaws.com',
+        'NAME': 'd659fhbtvhlc3j',
+        'USER': 'siywysxcxmwwlx',
+        'PASSWORD': '',
+        'HOST': 'ec2-34-194-100-156.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
