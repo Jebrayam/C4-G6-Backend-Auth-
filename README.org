@@ -1,0 +1,18 @@
+* Mercar
+[[https://i.imgur.com/d0IkTJq.jpg]]
+
+Mercar es una E-commerce de productos de la canasta familiar,
+obsesionados con nuestros clientes por brindarles siempre el mejor
+servicio garantizando siempre la calidad de nuestros productos.
+
+** Micro-servicios
+Nuestra aplicación está dividida en dos micro-servicios, un primer
+encargado de la autenticación de los usuarios, será desarrollado en
+Python utilizando el framework Django, y el segundo con la
+tarea de administrar nuestro inventario, para este se utilizará Java
+utilizando Sprint Boot.
+** Componente Web
+Nuestro front-end estará completamente construida en Vue y se comunicará con el
+back-end haciendo uso de una API Getway.
+** Arquitectura
+[[https://i.imgur.com/XIw4pOk.png]]
